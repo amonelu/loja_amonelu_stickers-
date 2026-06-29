@@ -31,12 +31,45 @@
     </script>
     <style type="text/tailwindcss">
         @layer utilities {
-            /* Configuração do seu papel de parede meigo */
-            .bg-papel-parede {
-                background-image: url('watermarked_img_7059996531163141205.png');
-                background-repeat: repeat;
-                background-attachment: fixed;
-                background-size: auto;
+            /* Fundo degradê + padrão repetido cheio de Amonelu e ♡ */
+            .bg-fundo-completo {
+                background: linear-gradient(180deg, #FFE6F7 0%, #E6CCFF 100%);
+                position: relative;
+            }
+
+            /* Padrão repetido por toda a tela */
+            .bg-fundo-completo::before {
+                content: "Amonelu ♡";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                /* Repete o texto em toda a área */
+                background-image: repeating-linear-gradient(
+                    0deg,
+                    transparent 0px,
+                    transparent 70px,
+                    rgba(153, 51, 255, 0.07) 70px,
+                    rgba(153, 51, 255, 0.07) 72px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent 0px,
+                    transparent 150px,
+                    rgba(255, 77, 179, 0.06) 150px,
+                    rgba(255, 77, 179, 0.06) 152px
+                );
+                font-size: 22px;
+                font-weight: bold;
+                color: rgba(153, 51, 255, 0.08);
+                font-family: "Segoe Print", cursive;
+                letter-spacing: 5px;
+                line-height: 70px;
+                word-spacing: 25px;
+                transform: rotate(-5deg);
+                z-index: 0;
+                pointer-events: none;
             }
 
             .conteudo {
@@ -51,20 +84,20 @@
                 box-shadow: 0 3px 10px rgba(153, 51, 255, 0.15);
             }
             .card-imagem {
-                @apply w-full h-40 bg-roxo-claro/50 rounded-lg flex items-center justify-center text-roxo-medio;
+                @apply w-full h-40 bg-roxo-claro/50 rounded-lg flex items-center justify-center text-roxo-medio overflow-hidden;
             }
         }
     </style>
 </head>
-<body class="bg-papel-parede font-fofa min-h-screen">
+<body class="bg-fundo-completo font-fofa min-h-screen">
 <div class="conteudo">
 
 <!-- Cabeçalho -->
-<header class="mx-3 mt-4 p-3 bg-white/90 backdrop-blur-md borda-fofa sombra-leve">
+<header class="mx-3 mt-4 p-3 bg-white/95 borda-fofa sombra-leve">
     <div class="flex flex-wrap items-center justify-between gap-2">
-        <h1 class="text-xl md:text-2xl font-bold text-roxo-escuro flex items-center gap-1">ଘ Amonelu Stickers ଓ</h1>
+        <h1 class="text-xl md:text-2xl font-bold text-roxo-escuro flex items-center gap-1">💖 Amonelu Stickers</h1>
         <nav class="flex gap-3 text-sm text-roxo-escuro">
-            <a href="#" class="hover:text-rosa-escuro font-bold">Início</a>
+            <a href="#" class="hover:text-rosa-escuro">Início</a>
             <a href="#" class="hover:text-rosa-escuro">Catálogo</a>
             <a href="#" class="hover:text-rosa-escuro">Favoritos</a>
             <a href="#" class="hover:text-rosa-escuro">Carrinho <span class="bg-rosa-escuro text-white px-1.5 rounded-full text-xs">0</span></a>
@@ -77,52 +110,52 @@
 </header>
 
 <!-- Banner Principal -->
-<section class="mx-3 my-5 p-5 bg-white/90 backdrop-blur-md borda-fofa sombra-leve">
+<section class="mx-3 my-5 p-5 bg-white/95 borda-fofa sombra-leve">
     <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
         <div>
             <h2 class="text-4xl font-bold text-roxo-escuro mb-3">AMONELU STICKERS</h2>
             <p class="text-gray-600 mb-4">Stickers animados personalizados para WhatsApp e Instagram ✨</p>
             <div class="flex flex-wrap justify-center md:justify-start gap-4 text-gray-700 mb-4">
-                <span>✨ Alta qualidade</span>
+                <span>🌸 Alta qualidade</span>
                 <span>⚡ Entrega rápida</span>
-                <span>💖 Feito com amor</span>
+                <span>💗 Feito com amor</span>
             </div>
-            <button class="bg-rosa-escuro text-white px-6 py-2 rounded-full font-bold shadow-md">100% PERSONALIZADO 💖</button>
+            <button class="bg-roxo-medio text-white px-6 py-2 rounded-full font-bold">100% PERSONALIZADO 💖</button>
         </div>
         <div class="w-48 h-40 bg-roxo-claro/50 rounded-lg flex items-center justify-center text-roxo-medio">
-            Espaço para imagem
+            <img src="imagens/banner.png" alt="Amonelu" class="w-full h-full object-contain p-2">
         </div>
     </div>
 </section>
 
 <!-- Seção Personalizados -->
-<section class="mx-3 my-5 p-5 bg-white/90 backdrop-blur-md borda-fofa sombra-leve text-center">
-    <h3 class="text-xl font-bold text-roxo-escuro mb-3">✨ Stickers Personalizados com sua foto</h3>
+<section class="mx-3 my-5 p-5 bg-white/95 borda-fofa sombra-leve text-center">
+    <h3 class="text-xl font-bold text-roxo-escuro mb-3">✨ Stickers Personalizados com sua foto ✨</h3>
     <p class="text-gray-600 mb-5">Envie sua foto, escolha a quantidade e receba stickers únicos!</p>
-    <button class="bg-rosa-escuro text-white px-6 py-2 rounded-full font-bold mb-6 shadow-md">Personalizar agora</button>
+    <button class="bg-rosa-escuro text-white px-6 py-2 rounded-full font-bold mb-6">Personalizar agora 🎀</button>
 
     <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-        <div class="bg-rosa-claro/70 p-3 rounded-xl border border-rosa-medio/30">
+        <div class="bg-rosa-claro p-3 rounded-full">
             <p class="text-roxo-escuro font-medium">3 stickers</p>
             <p class="text-xl font-bold text-rosa-escuro">R$ 5,00</p>
         </div>
-        <div class="bg-rosa-claro/70 p-3 rounded-xl border border-rosa-medio/30">
+        <div class="bg-rosa-claro p-3 rounded-full">
             <p class="text-roxo-escuro font-medium">5 stickers</p>
             <p class="text-xl font-bold text-rosa-escuro">R$ 8,00</p>
         </div>
-        <div class="bg-rosa-claro/70 p-3 rounded-xl border border-rosa-medio/30">
+        <div class="bg-rosa-claro p-3 rounded-full">
             <p class="text-roxo-escuro font-medium">10 stickers</p>
             <p class="text-xl font-bold text-rosa-escuro">R$ 15,00</p>
         </div>
-        <div class="bg-rosa-claro/70 p-3 rounded-xl border border-rosa-medio/30">
+        <div class="bg-rosa-claro p-3 rounded-full">
             <p class="text-roxo-escuro font-medium">20 stickers</p>
             <p class="text-xl font-bold text-rosa-escuro">R$ 25,00</p>
         </div>
-        <div class="bg-rosa-claro/70 p-3 rounded-xl border border-rosa-medio/30">
+        <div class="bg-rosa-claro p-3 rounded-full">
             <p class="text-roxo-escuro font-medium">30 stickers</p>
             <p class="text-xl font-bold text-rosa-escuro">R$ 35,00</p>
         </div>
-        <div class="bg-rosa-claro/70 p-3 rounded-xl border border-rosa-medio/30">
+        <div class="bg-rosa-claro p-3 rounded-full">
             <p class="text-roxo-escuro font-medium">50 stickers</p>
             <p class="text-xl font-bold text-rosa-escuro">R$ 50,00</p>
         </div>
@@ -130,73 +163,102 @@
 </section>
 
 <!-- Categorias -->
-<section class="mx-3 my-5 overflow-x-auto whitespace-nowrap scrollbar-none">
-    <div class="flex justify-start md:justify-center gap-2 pb-2">
-        <button class="bg-[#8A2BE2] text-white px-4 py-1.5 rounded-full text-sm font-bold">💜 BTS</button>
-        <button class="bg-[#BA55D3] text-white px-4 py-1.5 rounded-full text-sm font-bold">😂 Engraçados</button>
-        <button class="bg-[#9370DB] text-white px-4 py-1.5 rounded-full text-sm font-bold">🐶 Cachorros</button>
-        <button class="bg-[#FF69B4] text-white px-4 py-1.5 rounded-full text-sm font-bold">💖 Personalizados</button>
-        <button class="bg-[#9400D3] text-white px-4 py-1.5 rounded-full text-sm font-bold">🎵 Música</button>
-        <button class="bg-[#7B68EE] text-white px-4 py-1.5 rounded-full text-sm font-bold">🎬 Filmes e Séries</button>
-        <button class="bg-[#FF1493] text-white px-4 py-1.5 rounded-full text-sm font-bold">📅 Datas</button>
-        <button class="bg-[#BA55D3] text-white px-4 py-1.5 rounded-full text-sm font-bold">✨ Animados</button>
+<section class="mx-3 my-5">
+    <div class="flex flex-wrap justify-center gap-2">
+        <button class="bg-roxo-medio text-white px-3 py-1.5 rounded-full text-sm">💖 BTS</button>
+        <button class="bg-roxo-medio text-white px-3 py-1.5 rounded-full text-sm">🤪 Engraçados</button>
+        <button class="bg-roxo-medio text-white px-3 py-1.5 rounded-full text-sm">🐶 Cachorros</button>
+        <button class="bg-rosa-escuro text-white px-3 py-1.5 rounded-full text-sm">🎀 Personalizados</button>
+        <button class="bg-roxo-medio text-white px-3 py-1.5 rounded-full text-sm">🎵 Música</button>
+        <button class="bg-roxo-medio text-white px-3 py-1.5 rounded-full text-sm">🎬 Filmes e Séries</button>
+        <button class="bg-roxo-medio text-white px-3 py-1.5 rounded-full text-sm">📅 Datas</button>
+        <button class="bg-roxo-medio text-white px-3 py-1.5 rounded-full text-sm">✨ Animados</button>
     </div>
 </section>
 
 <!-- Vitrine dos Stickers -->
 <section class="mx-3 my-5">
-    <h3 class="text-xl font-bold text-center text-roxo-escuro mb-5">✨ Escolha seus stickers ✨</h3>
+    <h3 class="text-xl font-bold text-center text-roxo-escuro mb-5">💖 Escolha seus stickers 💖</h3>
 
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
         <!-- Card 1 -->
-        <div class="bg-white/90 backdrop-blur-md p-3 borda-fofa sombra-leve text-center">
+        <div class="bg-white/95 p-3 borda-fofa sombra-leve text-center">
             <div class="flex justify-end text-rosa-escuro">❤️</div>
-            <div class="card-imagem">Sua imagem aqui</div>
-            <h4 class="text-roxo-escuro my-2 font-semibold">Acorda, Preguiça!</h4>
+            <div class="card-imagem">
+                <img src="imagens/cachorro.png" alt="Acorda Preguiça" class="w-full h-full object-contain p-1">
+            </div>
+            <h4 class="text-roxo-escuro my-2">Acorda, Preguiça!</h4>
             <p class="text-rosa-escuro font-bold mb-2">R$ 2,00</p>
-            <button class="w-full bg-rosa-escuro text-white py-1.5 rounded-full text-sm font-bold">Comprar</button>
+            <button class="w-full bg-rosa-escuro text-white py-1.5 rounded-full text-sm">Comprar</button>
         </div>
 
         <!-- Card 2 -->
-        <div class="bg-white/90 backdrop-blur-md p-3 borda-fofa sombra-leve text-center">
+        <div class="bg-white/95 p-3 borda-fofa sombra-leve text-center">
             <div class="flex justify-end text-rosa-escuro">❤️</div>
-            <div class="card-imagem">Sua imagem aqui</div>
-            <h4 class="text-roxo-escuro my-2 font-semibold">Hora do Bubble Tea</h4>
+            <div class="card-imagem">
+                <img src="imagens/panda.png" alt="Bubble Tea" class="w-full h-full object-contain p-1">
+            </div>
+            <h4 class="text-roxo-escuro my-2">Hora do Bubble Tea</h4>
             <p class="text-rosa-escuro font-bold mb-2">R$ 2,00</p>
-            <button class="w-full bg-rosa-escuro text-white py-1.5 rounded-full text-sm font-bold">Comprar</button>
+            <button class="w-full bg-rosa-escuro text-white py-1.5 rounded-full text-sm">Comprar</button>
         </div>
 
         <!-- Card 3 -->
-        <div class="bg-white/90 backdrop-blur-md p-3 borda-fofa sombra-leve text-center">
+        <div class="bg-white/95 p-3 borda-fofa sombra-leve text-center">
             <div class="flex justify-end text-rosa-escuro">❤️</div>
-            <div class="card-imagem">Sua imagem aqui</div>
-            <h4 class="text-roxo-escuro my-2 font-semibold">Feliz e Confiante</h4>
+            <div class="card-imagem">
+                <img src="imagens/menina.png" alt="Feliz e Confiante" class="w-full h-full object-contain p-1">
+            </div>
+            <h4 class="text-roxo-escuro my-2">Feliz e Confiante</h4>
             <p class="text-rosa-escuro font-bold mb-2">R$ 2,00</p>
-            <button class="w-full bg-rosa-escuro text-white py-1.5 rounded-full text-sm font-bold">Comprar</button>
+            <button class="w-full bg-rosa-escuro text-white py-1.5 rounded-full text-sm">Comprar</button>
         </div>
 
         <!-- Card 4 -->
-        <div class="bg-white/90 backdrop-blur-md p-3 borda-fofa sombra-leve text-center">
+        <div class="bg-white/95 p-3 borda-fofa sombra-leve text-center">
             <div class="flex justify-end text-rosa-escuro">❤️</div>
-            <div class="card-imagem">Sua imagem aqui</div>
-            <h4 class="text-roxo-escuro my-2 font-semibold">Fofura Pura</h4>
+            <div class="card-imagem">
+                <img src="imagens/gatinho.png" alt="Fofura Pura" class="w-full h-full object-contain p-1">
+            </div>
+            <h4 class="text-roxo-escuro my-2">Fofura Pura</h4>
             <p class="text-rosa-escuro font-bold mb-2">R$ 2,00</p>
-            <button class="w-full bg-rosa-escuro text-white py-1.5 rounded-full text-sm font-bold">Comprar</button>
+            <button class="w-full bg-rosa-escuro text-white py-1.5 rounded-full text-sm">Comprar</button>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-white/95 p-3 borda-fofa sombra-leve text-center">
+            <div class="flex justify-end text-rosa-escuro">❤️</div>
+            <div class="card-imagem">
+                <img src="imagens/stitch.png" alt="Stitch Fofo" class="w-full h-full object-contain p-1">
+            </div>
+            <h4 class="text-roxo-escuro my-2">Stitch Fofo</h4>
+            <p class="text-rosa-escuro font-bold mb-2">R$ 2,00</p>
+            <button class="w-full bg-rosa-escuro text-white py-1.5 rounded-full text-sm">Comprar</button>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="bg-white/95 p-3 borda-fofa sombra-leve text-center">
+            <div class="flex justify-end text-rosa-escuro">❤️</div>
+            <div class="card-imagem">
+                <img src="imagens/urso.png" alt="Amor de Urso" class="w-full h-full object-contain p-1">
+            </div>
+            <h4 class="text-roxo-escuro my-2">Amor de Urso</h4>
+            <p class="text-rosa-escuro font-bold mb-2">R$ 2,00</p>
+            <button class="w-full bg-rosa-escuro text-white py-1.5 rounded-full text-sm">Comprar</button>
         </div>
     </div>
 
     <div class="text-center mt-6">
-        <button class="bg-roxo-medio text-white px-6 py-2 rounded-full font-bold shadow-md">Ver mais stickers 📦</button>
+        <button class="bg-roxo-medio text-white px-6 py-2 rounded-full">Ver mais stickers 📦</button>
     </div>
 </section>
 
 <!-- Rodapé -->
-<footer class="mx-3 my-8 p-4 text-center text-roxo-escuro text-sm bg-white/60 backdrop-blur-sm borda-fofa">
-    <p class="font-bold">Obrigada por visitar a Amonelu Stickers</p>
-    <p class="mt-1 text-xs">Atendimento com carinho</p>
+<footer class="mx-3 my-8 p-4 text-center text-roxo-escuro text-sm">
+    <p class="font-medium">💖 Obrigada por visitar a Amonelu Stickers 💖</p>
+    <p class="mt-1">Atendimento com carinho | 2026</p>
 </footer>
 
 </div>
 </body>
 </html>
-

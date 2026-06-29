@@ -12,14 +12,14 @@
                 extend: {
                     colors: {
                         rosa: {
-                            claro: '#FFEEF7',
-                            medio: '#FFBEE0',
-                            escuro: '#FF66B2'
+                            claro: '#FFE6F7',
+                            medio: '#FF99D6',
+                            escuro: '#FF4DB3'
                         },
                         roxo: {
-                            claro: '#F7EEFF',
-                            medio: '#D4A5FF',
-                            escuro: '#A855F7'
+                            claro: '#F3E5FF',
+                            medio: '#C27DFF',
+                            escuro: '#9933FF'
                         }
                     },
                     fontFamily: {
@@ -31,60 +31,12 @@
     </script>
     <style type="text/tailwindcss">
         @layer utilities {
-            /* Fundo com tom rosado, nome e corações */
-            .bg-fundo-personalizado {
-                background-color: #FFEEF7;
-                background-image: 
-                    linear-gradient(180deg, #FFEEF7 0%, #FCEFFF 100%),
-                    repeating-linear-gradient(
-                        45deg,
-                        transparent,
-                        transparent 120px,
-                        rgba(255, 102, 178, 0.08) 120px,
-                        rgba(255, 102, 178, 0.08) 122px
-                    ),
-                    repeating-linear-gradient(
-                        -45deg,
-                        transparent,
-                        transparent 120px,
-                        rgba(168, 85, 247, 0.06) 120px,
-                        rgba(168, 85, 247, 0.06) 122px
-                    );
-                position: relative;
-            }
-
-            /* Elementos decorativos: nome e corações */
-            .bg-fundo-personalizado::before {
-                content: "Amonelu ♡";
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                font-size: 28px;
-                font-weight: bold;
-                color: rgba(255, 102, 178, 0.07);
-                font-family: "Segoe Print", cursive;
-                z-index: 0;
-                letter-spacing: 8px;
-                line-height: 4;
-                pointer-events: none;
-                transform: rotate(-8deg);
-            }
-
-            .bg-fundo-personalizado::after {
-                content: "♡ ♡ ♡";
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                font-size: 22px;
-                color: rgba(168, 85, 247, 0.06);
-                z-index: 0;
-                letter-spacing: 60px;
-                line-height: 5;
-                pointer-events: none;
+            /* Configuração do seu papel de parede meigo */
+            .bg-papel-parede {
+                background-image: url('watermarked_img_7059996531163141205.png');
+                background-repeat: repeat;
+                background-attachment: fixed;
+                background-size: auto;
             }
 
             .conteudo {
@@ -93,192 +45,155 @@
             }
 
             .borda-fofa {
-                border-radius: 2rem;
+                border-radius: 1.5rem;
             }
-            .sombra-fofa {
-                box-shadow: 0 5px 15px rgba(255, 102, 178, 0.2);
+            .sombra-leve {
+                box-shadow: 0 3px 10px rgba(153, 51, 255, 0.15);
             }
-            .texto-sombra {
-                text-shadow: 0 1px 3px rgba(168, 85, 247, 0.2);
-            }
-            .vitrine {
-                @apply bg-white/95 p-4 borda-fofa sombra-fofa transition-transform duration-300 hover:scale-[1.02];
-            }
-            .espaco-imagem {
-                @apply w-full h-44 bg-roxo-claro/50 rounded-xl flex items-center justify-center overflow-hidden;
+            .card-imagem {
+                @apply w-full h-40 bg-roxo-claro/50 rounded-lg flex items-center justify-center text-roxo-medio;
             }
         }
     </style>
 </head>
-<body class="bg-fundo-personalizado font-fofa min-h-screen">
+<body class="bg-papel-parede font-fofa min-h-screen">
 <div class="conteudo">
 
 <!-- Cabeçalho -->
-<header class="mx-4 mt-5 p-4 bg-white/90 borda-fofa sombra-fofa">
-    <div class="flex flex-wrap items-center justify-between gap-3">
-        <h1 class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-roxo-escuro to-rosa-escuro bg-clip-text text-transparent texto-sombra flex items-center gap-2">
-            💖✨ Amonelu Stickers
-        </h1>
-        <nav class="flex gap-4 text-roxo-escuro font-medium">
-            <a href="#" class="hover:text-rosa-escuro transition">Início</a>
-            <a href="#" class="hover:text-rosa-escuro transition">Catálogo</a>
-            <a href="#" class="hover:text-rosa-escuro transition">Favoritos</a>
-            <a href="#" class="hover:text-rosa-escuro transition">Carrinho <span class="bg-rosa-escuro text-white px-2 rounded-full text-xs">0</span></a>
+<header class="mx-3 mt-4 p-3 bg-white/90 backdrop-blur-md borda-fofa sombra-leve">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+        <h1 class="text-xl md:text-2xl font-bold text-roxo-escuro flex items-center gap-1">ଘ Amonelu Stickers ଓ</h1>
+        <nav class="flex gap-3 text-sm text-roxo-escuro">
+            <a href="#" class="hover:text-rosa-escuro font-bold">Início</a>
+            <a href="#" class="hover:text-rosa-escuro">Catálogo</a>
+            <a href="#" class="hover:text-rosa-escuro">Favoritos</a>
+            <a href="#" class="hover:text-rosa-escuro">Carrinho <span class="bg-rosa-escuro text-white px-1.5 rounded-full text-xs">0</span></a>
         </nav>
-        <div class="relative w-full md:w-60">
-            <input type="text" placeholder="Procurar stickers..." class="w-full px-4 py-2 rounded-full border border-roxo-medio/30 focus:outline-none focus:ring-2 focus:ring-rosa-medio">
-            <i class="fa fa-search absolute right-3 top-2.5 text-roxo-medio"></i>
+        <div class="relative w-full md:w-56">
+            <input type="text" placeholder="Procurar stickers..." class="w-full px-3 py-1.5 rounded-full border border-roxo-claro focus:outline-none focus:ring-1 focus:ring-roxo-medio">
+            <i class="fa fa-search absolute right-2.5 top-1.5 text-roxo-medio"></i>
         </div>
     </div>
 </header>
 
 <!-- Banner Principal -->
-<section class="mx-4 my-6 p-6 bg-white/95 borda-fofa sombra-fofa text-center">
-    <h2 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-roxo-escuro to-rosa-escuro bg-clip-text text-transparent texto-sombra mb-4">AMONELU STICKERS</h2>
-    <p class="text-lg text-gray-600 mb-5">Stickers animados personalizados para WhatsApp e Instagram ✨</p>
-    <div class="flex flex-wrap justify-center gap-6 mb-6 text-gray-700">
-        <span class="flex items-center gap-2">🌸 Alta qualidade</span>
-        <span class="flex items-center gap-2">⚡ Entrega rápida</span>
-        <span class="flex items-center gap-2">💗 Feito com amor</span>
+<section class="mx-3 my-5 p-5 bg-white/90 backdrop-blur-md borda-fofa sombra-leve">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+        <div>
+            <h2 class="text-4xl font-bold text-roxo-escuro mb-3">AMONELU STICKERS</h2>
+            <p class="text-gray-600 mb-4">Stickers animados personalizados para WhatsApp e Instagram ✨</p>
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 text-gray-700 mb-4">
+                <span>✨ Alta qualidade</span>
+                <span>⚡ Entrega rápida</span>
+                <span>💖 Feito com amor</span>
+            </div>
+            <button class="bg-rosa-escuro text-white px-6 py-2 rounded-full font-bold shadow-md">100% PERSONALIZADO 💖</button>
+        </div>
+        <div class="w-48 h-40 bg-roxo-claro/50 rounded-lg flex items-center justify-center text-roxo-medio">
+            Espaço para imagem
+        </div>
     </div>
-    <button class="bg-roxo-medio text-white px-8 py-2.5 rounded-full text-lg font-bold hover:bg-roxo-escuro transition">
-        100% PERSONALIZADO 💖✨
-    </button>
 </section>
 
-<!-- Seção de Stickers Personalizados -->
-<section class="mx-4 my-7 p-6 bg-white/95 borda-fofa sombra-fofa text-center">
-    <h3 class="text-2xl md:text-3xl font-bold text-roxo-escuro mb-4">✨ Stickers Personalizados com sua foto ✨</h3>
-    <p class="text-gray-600 mb-6">Envie sua foto, escolha a quantidade e receba stickers únicos e feitos com carinho!</p>
-    <button class="bg-rosa-escuro text-white px-8 py-2.5 rounded-full text-lg font-bold hover:bg-rosa-medio transition mb-8">
-        Personalizar agora 🎀
-    </button>
+<!-- Seção Personalizados -->
+<section class="mx-3 my-5 p-5 bg-white/90 backdrop-blur-md borda-fofa sombra-leve text-center">
+    <h3 class="text-xl font-bold text-roxo-escuro mb-3">✨ Stickers Personalizados com sua foto</h3>
+    <p class="text-gray-600 mb-5">Envie sua foto, escolha a quantidade e receba stickers únicos!</p>
+    <button class="bg-rosa-escuro text-white px-6 py-2 rounded-full font-bold mb-6 shadow-md">Personalizar agora</button>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="bg-rosa-claro/80 p-3 rounded-full">
-            <p class="font-bold text-roxo-escuro">3 unidades</p>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div class="bg-rosa-claro/70 p-3 rounded-xl border border-rosa-medio/30">
+            <p class="text-roxo-escuro font-medium">3 stickers</p>
             <p class="text-xl font-bold text-rosa-escuro">R$ 5,00</p>
         </div>
-        <div class="bg-rosa-claro/80 p-3 rounded-full">
-            <p class="font-bold text-roxo-escuro">5 unidades</p>
+        <div class="bg-rosa-claro/70 p-3 rounded-xl border border-rosa-medio/30">
+            <p class="text-roxo-escuro font-medium">5 stickers</p>
             <p class="text-xl font-bold text-rosa-escuro">R$ 8,00</p>
         </div>
-        <div class="bg-rosa-claro/80 p-3 rounded-full">
-            <p class="font-bold text-roxo-escuro">10 unidades</p>
+        <div class="bg-rosa-claro/70 p-3 rounded-xl border border-rosa-medio/30">
+            <p class="text-roxo-escuro font-medium">10 stickers</p>
             <p class="text-xl font-bold text-rosa-escuro">R$ 15,00</p>
         </div>
-        <div class="bg-rosa-claro/80 p-3 rounded-full">
-            <p class="font-bold text-roxo-escuro">20 unidades</p>
+        <div class="bg-rosa-claro/70 p-3 rounded-xl border border-rosa-medio/30">
+            <p class="text-roxo-escuro font-medium">20 stickers</p>
             <p class="text-xl font-bold text-rosa-escuro">R$ 25,00</p>
         </div>
-        <div class="bg-rosa-claro/80 p-3 rounded-full">
-            <p class="font-bold text-roxo-escuro">30 unidades</p>
+        <div class="bg-rosa-claro/70 p-3 rounded-xl border border-rosa-medio/30">
+            <p class="text-roxo-escuro font-medium">30 stickers</p>
             <p class="text-xl font-bold text-rosa-escuro">R$ 35,00</p>
         </div>
-        <div class="bg-rosa-claro/80 p-3 rounded-full">
-            <p class="font-bold text-roxo-escuro">50 unidades</p>
+        <div class="bg-rosa-claro/70 p-3 rounded-xl border border-rosa-medio/30">
+            <p class="text-roxo-escuro font-medium">50 stickers</p>
             <p class="text-xl font-bold text-rosa-escuro">R$ 50,00</p>
         </div>
     </div>
 </section>
 
 <!-- Categorias -->
-<section class="mx-4 my-6">
-    <div class="flex flex-wrap justify-center gap-2.5">
-        <button class="bg-roxo-medio/90 text-white px-4 py-2 rounded-full hover:bg-roxo-escuro transition">💖 BTS</button>
-        <button class="bg-roxo-medio/90 text-white px-4 py-2 rounded-full hover:bg-roxo-escuro transition">🤪 Engraçados</button>
-        <button class="bg-roxo-medio/90 text-white px-4 py-2 rounded-full hover:bg-roxo-escuro transition">🐶 Cachorros</button>
-        <button class="bg-rosa-escuro/90 text-white px-4 py-2 rounded-full hover:bg-rosa-medio transition">🎀 Personalizados</button>
-        <button class="bg-roxo-medio/90 text-white px-4 py-2 rounded-full hover:bg-roxo-escuro transition">🎵 Música</button>
-        <button class="bg-roxo-medio/90 text-white px-4 py-2 rounded-full hover:bg-roxo-escuro transition">🎬 Filmes e Séries</button>
-        <button class="bg-roxo-medio/90 text-white px-4 py-2 rounded-full hover:bg-roxo-escuro transition">📅 Datas</button>
-        <button class="bg-roxo-medio/90 text-white px-4 py-2 rounded-full hover:bg-roxo-escuro transition">✨ Animados</button>
+<section class="mx-3 my-5 overflow-x-auto whitespace-nowrap scrollbar-none">
+    <div class="flex justify-start md:justify-center gap-2 pb-2">
+        <button class="bg-[#8A2BE2] text-white px-4 py-1.5 rounded-full text-sm font-bold">💜 BTS</button>
+        <button class="bg-[#BA55D3] text-white px-4 py-1.5 rounded-full text-sm font-bold">😂 Engraçados</button>
+        <button class="bg-[#9370DB] text-white px-4 py-1.5 rounded-full text-sm font-bold">🐶 Cachorros</button>
+        <button class="bg-[#FF69B4] text-white px-4 py-1.5 rounded-full text-sm font-bold">💖 Personalizados</button>
+        <button class="bg-[#9400D3] text-white px-4 py-1.5 rounded-full text-sm font-bold">🎵 Música</button>
+        <button class="bg-[#7B68EE] text-white px-4 py-1.5 rounded-full text-sm font-bold">🎬 Filmes e Séries</button>
+        <button class="bg-[#FF1493] text-white px-4 py-1.5 rounded-full text-sm font-bold">📅 Datas</button>
+        <button class="bg-[#BA55D3] text-white px-4 py-1.5 rounded-full text-sm font-bold">✨ Animados</button>
     </div>
 </section>
 
 <!-- Vitrine dos Stickers -->
-<section class="mx-4 my-8">
-    <h3 class="text-2xl font-bold text-center text-roxo-escuro mb-6">💖✨ Escolha seus stickers ✨💖</h3>
+<section class="mx-3 my-5">
+    <h3 class="text-xl font-bold text-center text-roxo-escuro mb-5">✨ Escolha seus stickers ✨</h3>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        <!-- Vitrine 1 -->
-        <div class="vitrine">
-            <div class="flex justify-end text-rosa-escuro text-xl">❤️</div>
-            <div class="espaco-imagem">
-                <img src="imagens/cachorro.png" alt="Acorda Preguiça" class="w-full h-full object-contain p-2">
-            </div>
-            <h4 class="text-lg font-medium text-roxo-escuro my-3 text-center">Acorda, Preguiça!</h4>
-            <p class="text-xl font-bold text-rosa-escuro text-center mb-3">R$ 2,00</p>
-            <button class="w-full bg-rosa-escuro/90 text-white py-2 rounded-full hover:bg-rosa-medio transition">Comprar 🛒</button>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <!-- Card 1 -->
+        <div class="bg-white/90 backdrop-blur-md p-3 borda-fofa sombra-leve text-center">
+            <div class="flex justify-end text-rosa-escuro">❤️</div>
+            <div class="card-imagem">Sua imagem aqui</div>
+            <h4 class="text-roxo-escuro my-2 font-semibold">Acorda, Preguiça!</h4>
+            <p class="text-rosa-escuro font-bold mb-2">R$ 2,00</p>
+            <button class="w-full bg-rosa-escuro text-white py-1.5 rounded-full text-sm font-bold">Comprar</button>
         </div>
 
-        <!-- Vitrine 2 -->
-        <div class="vitrine">
-            <div class="flex justify-end text-rosa-escuro text-xl">❤️</div>
-            <div class="espaco-imagem">
-                <img src="imagens/panda.png" alt="Bubble Tea" class="w-full h-full object-contain p-2">
-            </div>
-            <h4 class="text-lg font-medium text-roxo-escuro my-3 text-center">Hora do Bubble Tea</h4>
-            <p class="text-xl font-bold text-rosa-escuro text-center mb-3">R$ 2,00</p>
-            <button class="w-full bg-rosa-escuro/90 text-white py-2 rounded-full hover:bg-rosa-medio transition">Comprar 🛒</button>
+        <!-- Card 2 -->
+        <div class="bg-white/90 backdrop-blur-md p-3 borda-fofa sombra-leve text-center">
+            <div class="flex justify-end text-rosa-escuro">❤️</div>
+            <div class="card-imagem">Sua imagem aqui</div>
+            <h4 class="text-roxo-escuro my-2 font-semibold">Hora do Bubble Tea</h4>
+            <p class="text-rosa-escuro font-bold mb-2">R$ 2,00</p>
+            <button class="w-full bg-rosa-escuro text-white py-1.5 rounded-full text-sm font-bold">Comprar</button>
         </div>
 
-        <!-- Vitrine 3 -->
-        <div class="vitrine">
-            <div class="flex justify-end text-rosa-escuro text-xl">❤️</div>
-            <div class="espaco-imagem">
-                <img src="imagens/menina.png" alt="Feliz e Confiante" class="w-full h-full object-contain p-2">
-            </div>
-            <h4 class="text-lg font-medium text-roxo-escuro my-3 text-center">Feliz e Confiante</h4>
-            <p class="text-xl font-bold text-rosa-escuro text-center mb-3">R$ 2,00</p>
-            <button class="w-full bg-rosa-escuro/90 text-white py-2 rounded-full hover:bg-rosa-medio transition">Comprar 🛒</button>
+        <!-- Card 3 -->
+        <div class="bg-white/90 backdrop-blur-md p-3 borda-fofa sombra-leve text-center">
+            <div class="flex justify-end text-rosa-escuro">❤️</div>
+            <div class="card-imagem">Sua imagem aqui</div>
+            <h4 class="text-roxo-escuro my-2 font-semibold">Feliz e Confiante</h4>
+            <p class="text-rosa-escuro font-bold mb-2">R$ 2,00</p>
+            <button class="w-full bg-rosa-escuro text-white py-1.5 rounded-full text-sm font-bold">Comprar</button>
         </div>
 
-        <!-- Vitrine 4 -->
-        <div class="vitrine">
-            <div class="flex justify-end text-rosa-escuro text-xl">❤️</div>
-            <div class="espaco-imagem">
-                <img src="imagens/gatinho.png" alt="Fofura Pura" class="w-full h-full object-contain p-2">
-            </div>
-            <h4 class="text-lg font-medium text-roxo-escuro my-3 text-center">Fofura Pura</h4>
-            <p class="text-xl font-bold text-rosa-escuro text-center mb-3">R$ 2,00</p>
-            <button class="w-full bg-rosa-escuro/90 text-white py-2 rounded-full hover:bg-rosa-medio transition">Comprar 🛒</button>
-        </div>
-
-        <!-- Vitrine 5 -->
-        <div class="vitrine">
-            <div class="flex justify-end text-rosa-escuro text-xl">❤️</div>
-            <div class="espaco-imagem">
-                <img src="imagens/stitch.png" alt="Stitch Fofo" class="w-full h-full object-contain p-2">
-            </div>
-            <h4 class="text-lg font-medium text-roxo-escuro my-3 text-center">Stitch Fofo</h4>
-            <p class="text-xl font-bold text-rosa-escuro text-center mb-3">R$ 2,00</p>
-            <button class="w-full bg-rosa-escuro/90 text-white py-2 rounded-full hover:bg-rosa-medio transition">Comprar 🛒</button>
-        </div>
-
-        <!-- Vitrine 6 -->
-        <div class="vitrine">
-            <div class="flex justify-end text-rosa-escuro text-xl">❤️</div>
-            <div class="espaco-imagem">
-                <img src="imagens/urso.png" alt="Amor de Urso" class="w-full h-full object-contain p-2">
-            </div>
-            <h4 class="text-lg font-medium text-roxo-escuro my-3 text-center">Amor de Urso</h4>
-            <p class="text-xl font-bold text-rosa-escuro text-center mb-3">R$ 2,00</p>
-            <button class="w-full bg-rosa-escuro/90 text-white py-2 rounded-full hover:bg-rosa-medio transition">Comprar 🛒</button>
+        <!-- Card 4 -->
+        <div class="bg-white/90 backdrop-blur-md p-3 borda-fofa sombra-leve text-center">
+            <div class="flex justify-end text-rosa-escuro">❤️</div>
+            <div class="card-imagem">Sua imagem aqui</div>
+            <h4 class="text-roxo-escuro my-2 font-semibold">Fofura Pura</h4>
+            <p class="text-rosa-escuro font-bold mb-2">R$ 2,00</p>
+            <button class="w-full bg-rosa-escuro text-white py-1.5 rounded-full text-sm font-bold">Comprar</button>
         </div>
     </div>
 
-    <div class="text-center mt-8">
-        <button class="bg-roxo-medio/90 text-white px-8 py-2.5 rounded-full font-medium hover:bg-roxo-escuro transition">
-            Ver mais stickers 📦
-        </button>
+    <div class="text-center mt-6">
+        <button class="bg-roxo-medio text-white px-6 py-2 rounded-full font-bold shadow-md">Ver mais stickers 📦</button>
     </div>
 </section>
 
 <!-- Rodapé -->
-<footer class="mx-4 my-10 p-4 text-center text-roxo-escuro font-medium">
-    <p class="text-xl">💖✨ Obrigada por visitar a Amonelu Stickers ✨💖</p>
-    <p class="mt-2">Atendimento com carinho | 2026</p>
+<footer class="mx-3 my-8 p-4 text-center text-roxo-escuro text-sm bg-white/60 backdrop-blur-sm borda-fofa">
+    <p class="font-bold">Obrigada por visitar a Amonelu Stickers</p>
+    <p class="mt-1 text-xs">Atendimento com carinho</p>
 </footer>
 
 </div>
